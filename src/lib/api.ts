@@ -17,6 +17,24 @@ export const login = async(user: string, password: string) => {
     return await result.json()
 }
 
+export const createUser = async(user: string, password: string, isAdmin: Boolean) => {
+    const data = {
+        username: user,
+        password: password,
+        isAdmin: isAdmin
+    }
+
+    const result = await fetch(`${server}/users/`, {
+        method: "POST",
+        headers: {
+            'Content-Type': "application/json"
+        },
+        body: JSON.stringify(data)
+    })
+
+    return await result.json()
+}
+
 export const validateSession = async() => {
     const jwt = await getJwt();
 

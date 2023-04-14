@@ -28,6 +28,7 @@
     <button on:click={handleLogin}>Login</button>
 </form>
 <div class="error">{error}</div>
+<a href="/create-user">Create new user</a>
 
 <style>
     .loginform {
