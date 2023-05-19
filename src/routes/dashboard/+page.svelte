@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { browser } from "$app/environment";
 	import { goto } from "$app/navigation";
 	import { validateSession } from "../../lib/api";
@@ -18,8 +18,8 @@
                 return;
             }
 
-            username = res.username;
-            isAdmin = res.isAdmin;
+            username = res?.username!;
+            isAdmin = res?.isAdmin!;
         })
     }
 </script>
