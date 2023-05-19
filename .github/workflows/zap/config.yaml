@@ -1,0 +1,12 @@
+env:
+  contexts:
+    - name: default
+      urls: [http://172.17.0.1:5173/]
+jobs:
+  - type: spiderAjax
+    parameters:
+      maxDuration: 1
+      maxCrawlDepth: 3
+  - type: activeScan
+    parameters:
+      maxScanDurationInMins: 10
