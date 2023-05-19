@@ -47,7 +47,7 @@ export const validateSession = async() => {
     //     credentials: "include",
     // })
 
-    if (jwt) {
+    if (jwt !== null) {
         return {
             username: "test_user",
             id: "1234567890",
