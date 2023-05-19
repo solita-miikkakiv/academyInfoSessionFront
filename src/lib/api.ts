@@ -38,19 +38,32 @@ export const createUser = async(user: string, password: string, isAdmin: Boolean
 export const validateSession = async() => {
     const jwt = await getJwt();
 
-    const result = await fetch(`${server}/users/me`, {
-        method: "GET",
-        headers: {
-            'Content-Type': "application/json",
-            'Authorization': `Bearer ${jwt}`
-        },
-        credentials: "include",
-    })
+    // const result = await fetch(`${server}/users/me`, {
+    //     method: "GET",
+    //     headers: {
+    //         'Content-Type': "application/json",
+    //         'Authorization': `Bearer ${jwt}`
+    //     },
+    //     credentials: "include",
+    // })
 
-    return await result.json()
+    if (jwt) {
+        return {
+            username: "test_user",
+            id: "1234567890",
+            isAdmin: true,
+            statusCode: 200
+        }
+    } else {
+        return {
+            statusCode: 401,
+            id: "asdasd"
+        }
+    }
+
 }
 
-export const getLoginCount = async(id: number) => {
+export const getLoginCount = async(id: string) => {
     const jwt = await getJwt();
 
     const result = await fetch(`${server}/users/logindata/${id}`, {
