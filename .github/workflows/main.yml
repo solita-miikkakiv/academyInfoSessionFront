@@ -38,6 +38,6 @@ jobs:
         test_user: ${{ secrets.TEST_USER }}
         test_password: ${{ secrets.TEST_PASSWORD }}
         target: 'http://172.17.0.1:5173/'
-        zap_login: /.github/workflows/zap/http_sender.py
-        zap_configfile: /.github/workflows/zap/config.yaml
+        zap_login: ./.github/workflows/zap/http_sender.py
+        zap_configfile: ./.github/workflows/zap/fail.yaml
         
