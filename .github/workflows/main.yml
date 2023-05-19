@@ -1,0 +1,43 @@
+name: Build and scan
+
+on:
+  push:
+    branches: [ zap-testing ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        ref: zap-testing
+        
+    - name: Setup node
+      uses: actions/setup-node@v3
+      with:
+        node_version: 18
+        cache: 'npm'
+        
+    - name: Install deps
+      run: npm ci
+      
+    - name: Run app
+      run: |
+        npm run dev &
+    
+    - name: Wait until app is running
+      run: |
+        for attempt in {1..60}; do sleep 1; if curl -s http://localhost:5173; then echo "App started"; break; fi; echo "Waiting for app to start.."; done
+
+    - name: vulnerability-scan
+      uses: solita-miikkakiv/actions/shell-actions/vulnerability-scan-full@main
+      with:
+        azure_user: ${{ secrets.TEST_USER }}
+        azure_password: ${{ secrets.TEST_PASSWORD }}
+        target: 'http://172.17.0.1:5173/'
+        zap_login: /.github/workflows/zap/http_sender.py
+        zap_configfile: /.github/workflows/zap/config.yaml
+        
