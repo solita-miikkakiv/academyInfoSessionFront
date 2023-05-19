@@ -25,7 +25,7 @@
 </script>
 
 <h1>Dashboard</h1>
-<div>Welcome {username}</div>
+<div id="welcome">Welcome {username}</div>
 <div><a href="/logincount">Login Count</a></div>
 <div><button on:click={handleLogout}>Logout</button></div>
 {#if isAdmin}
