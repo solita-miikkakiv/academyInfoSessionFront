@@ -3,10 +3,20 @@ env:
     - name: default
       urls: [http://172.17.0.1:5173/]
 jobs:
+  - type: script
+    parameters:
+      action: add
+      name: http-sender
+      type: httpsender
+      file: ./http-sender.py
+  - type: script
+    parameters:
+      action: enable
+      name: http-sender
   - type: spiderAjax
     parameters:
       maxDuration: 1
       maxCrawlDepth: 3
   - type: activeScan
     parameters:
-      maxScanDurationInMins: 10
+      maxScanDurationInMins: 5
