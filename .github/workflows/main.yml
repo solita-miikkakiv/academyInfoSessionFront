@@ -39,4 +39,5 @@ jobs:
         test_password: ${{ secrets.TEST_PASSWORD }}
         target: 'http://localhost:5173/'
         zap_configfile: .github/workflows/zap/config.yaml
+        zap_script: .github/workflows/zap/http-sender.py
         
