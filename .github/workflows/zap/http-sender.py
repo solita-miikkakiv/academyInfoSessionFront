@@ -74,12 +74,14 @@ def doLogin(helper):
  
     # Open browser and navigate to root
     webDriver.get(BASE_URL)
+    print('login request to' + BASE_URL)
 
     time.sleep(1)
 
     # Fill email field and click
     webDriver.findElement(By.id("username")).sendKeys(USER)
     webDriver.findElement(By.id("password")).sendKeys(PASS)
+    print('fields filled')
 
     time.sleep(2)
 
@@ -91,6 +93,7 @@ def doLogin(helper):
     
     accessToken = getAccessToken(webDriver)
     webDriver.close()
+    print('token: ' + str(accessToken))
     return accessToken
  
 def click(ele, webDriver):
