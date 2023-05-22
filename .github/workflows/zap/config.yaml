@@ -8,7 +8,7 @@ jobs:
       action: add
       name: http-sender
       type: httpsender
-      engine: Jython
+      engine: jython
       file: /zap/wrk/.github/workflows/zap/http-sender.py
   - type: script
     parameters:
