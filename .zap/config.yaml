@@ -29,4 +29,5 @@ jobs:
       maxScanDurationInMins: 5
   - type: report
     parameters:
+      reportDir: /
       reportFile: report_html.html
