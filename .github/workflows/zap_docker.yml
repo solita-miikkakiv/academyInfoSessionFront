@@ -32,13 +32,10 @@ jobs:
       run: |
         for attempt in {1..60}; do sleep 1; if curl -s http://localhost:5173; then echo "App started"; break; fi; echo "Waiting for app to start.."; done
 
-    - name: vulnerability-scan
-      uses: solita-miikkakiv/actions/shell-actions/vulnerability-scan-full@main
+    - name: ZAP Docker scan
+      uses: solita-miikkakiv/actions/shell-actions/vuln-scan-docker@main
       with:
         test_user: ${{ secrets.TEST_USER }}
         test_password: ${{ secrets.TEST_PASSWORD }}
-        target: 'http://localhost:5173/'
         zap_configfile: .zap/config.yaml
-        zap_script: .zap/http-sender.py
-        zap_rules: .zap/rules.tsv
         

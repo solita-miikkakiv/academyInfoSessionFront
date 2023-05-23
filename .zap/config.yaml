@@ -1,7 +1,10 @@
 env:
   contexts:
     - name: default
-      urls: [http://localhost:5173/]
+      urls: [http://127.0.0.1:5173/]
+      excludePaths: ["http://127.0.0.1/node_modules/[A-Za-z0-9]+"]
+  parameters:
+    progressToStdout: true
 jobs:
   - type: script
     parameters:
@@ -9,11 +12,14 @@ jobs:
       name: http-sender
       type: httpsender
       engine: jython
-      file: /zap/wrk/.github/workflows/zap/http-sender.py
+      file: http-sender.py
   - type: script
     parameters:
       action: enable
       name: http-sender
+  - type: spider
+    parameters:
+      maxDepth: 3
   - type: spiderAjax
     parameters:
       maxDuration: 1
