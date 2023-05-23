@@ -26,7 +26,7 @@ jobs:
       maxCrawlDepth: 3
   - type: activeScan
     parameters:
-      maxScanDurationInMins: 5
+      maxScanDurationInMins: 2
   - type: report
     parameters:
       reportFile: report_html.html
