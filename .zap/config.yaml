@@ -29,5 +29,4 @@ jobs:
       maxScanDurationInMins: 5
   - type: report
     parameters:
-      reportDir: /zap/wrk/
-      reportFile: report_html.html
+      reportFile: /home/zap/report_html.html
