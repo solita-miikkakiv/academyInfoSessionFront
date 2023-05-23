@@ -29,4 +29,4 @@ jobs:
       maxScanDurationInMins: 5
   - type: report
     parameters:
-      reportFile: /home/zap/report_html.html
+      reportFile: report_html.html
