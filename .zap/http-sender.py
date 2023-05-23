@@ -70,7 +70,7 @@ def doLogin(helper):
     firefoxOptions.addArguments("--start-maximized")
     firefoxOptions.addArguments("--headless")
     webDriver = FirefoxDriver(firefoxOptions)
-    webDriver.get(BASE_URL)
+    print('GET ' + BASE_URL)
  
     # Open browser and navigate to root
     webDriver.get(BASE_URL)
