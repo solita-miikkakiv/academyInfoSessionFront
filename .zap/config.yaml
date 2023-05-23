@@ -27,3 +27,6 @@ jobs:
   - type: activeScan
     parameters:
       maxScanDurationInMins: 5
+  - type: report
+    parameters:
+      reportFile: report_html.html
