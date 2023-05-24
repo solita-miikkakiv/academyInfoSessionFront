@@ -17,7 +17,7 @@ jobs:
     parameters:
       action: enable
       name: http-sender
-  - type: alertFilters
+  - type: alertFilter
     alertFilters:
       - ruleId: 10038
         newRisk: 'False Positive'
