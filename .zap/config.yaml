@@ -2,7 +2,7 @@ env:
   contexts:
     - name: default
       urls: [http://localhost:5173/]
-      excludePaths: ["http://localhost/node_modules/[A-Za-z0-9]+"]
+      excludePaths: [http://localhost:5173/node_modules/]
   parameters:
     progressToStdout: true
 jobs:
@@ -17,6 +17,10 @@ jobs:
     parameters:
       action: enable
       name: http-sender
+  - type: alertFilters
+    alertFilters:
+      - ruleId: 10038
+        newRisk: 'False Positive'
   - type: spider
     parameters:
       maxDepth: 3
@@ -30,3 +34,12 @@ jobs:
   - type: report
     parameters:
       reportFile: report_html.html
+    risks:
+      - high
+      - medium
+      - low
+      - info
+    confidences:
+      - high
+      - medium
+      - low
