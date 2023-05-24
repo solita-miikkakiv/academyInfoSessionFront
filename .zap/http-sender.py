@@ -70,7 +70,7 @@ def doLogin(helper):
     firefoxOptions.addArguments("--proxy-server='direct://'")
     firefoxOptions.addArguments("--proxy-bypass-list=*")
     firefoxOptions.addArguments("--start-maximized")
-    # firefoxOptions.addArguments("--headless")
+    firefoxOptions.addArguments("--headless")
     print("driver arguments")
     webDriver = FirefoxDriver(firefoxOptions)
     print('GET ' + BASE_URL)
