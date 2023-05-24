@@ -23,6 +23,7 @@ from synchronize import make_synchronized
 BASE_URL = os.getenv('ZAP_BASE_URL')
 USER = os.getenv('ZAP_MS_USER')
 PASS = os.getenv('ZAP_MS_PASSWORD')
+AUTH_ENDPOINT = '/dashboard'
  
 # function called for every outgoing request (part of httpsender)
 def sendingRequest(msg, initiator, helper):

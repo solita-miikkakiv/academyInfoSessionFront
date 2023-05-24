@@ -36,4 +36,5 @@ jobs:
         test_user: ${{ secrets.TEST_USER }}
         test_password: ${{ secrets.TEST_PASSWORD }}
         zap_configfile: .zap/config.yaml
+        target: https://localhost:5173/
         
