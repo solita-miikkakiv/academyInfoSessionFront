@@ -62,13 +62,15 @@ def isTokenValid(accessToken, helper):
 def doLogin(helper):
     print("attempt login")
     firefoxOptions = FirefoxOptions()
+    print("driver set")
     firefoxOptions.addArguments("--window-size=1920,1080")
     firefoxOptions.addArguments("--disable-gpu")
     firefoxOptions.addArguments("--disable-extensions")
     firefoxOptions.addArguments("--proxy-server='direct://'")
     firefoxOptions.addArguments("--proxy-bypass-list=*")
     firefoxOptions.addArguments("--start-maximized")
-    firefoxOptions.addArguments("--headless")
+    # firefoxOptions.addArguments("--headless")
+    print("driver arguments")
     webDriver = FirefoxDriver(firefoxOptions)
     print('GET ' + BASE_URL)
  

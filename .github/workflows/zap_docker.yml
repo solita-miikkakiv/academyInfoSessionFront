@@ -1,4 +1,4 @@
-name: Build and scan
+name: ZAP Docker scan
 
 on:
   push:
