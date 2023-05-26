@@ -43,3 +43,15 @@ jobs:
       - high
       - medium
       - low
+  - type: report
+    parameters:
+      template: traditional-json
+      reportFile: report_json.json
+    risks:
+      - high
+      - medium
+      - low
+    confidences:
+      - high
+      - medium
+      - low
