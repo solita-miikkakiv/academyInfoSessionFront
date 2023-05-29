@@ -21,6 +21,18 @@ jobs:
     alertFilters:
       - ruleId: 10038
         newRisk: 'False Positive'
+      - ruleId: 6
+        newRisk: 'False Positive'
+      - ruleId: 10202
+        newRisk: 'False Positive'
+      - ruleId: 20016
+        newRisk: 'False Positive'
+      - ruleId: 10202
+        newRisk: 'False Positive'
+      - ruleId: 10020
+        newRisk: 'False Positive'
+      - ruleId: 10202
+        newRisk: 'False Positive'
   - type: spider
     parameters:
       maxDepth: 3
@@ -50,7 +62,6 @@ jobs:
     risks:
       - high
       - medium
-      - low
     confidences:
       - high
       - medium
