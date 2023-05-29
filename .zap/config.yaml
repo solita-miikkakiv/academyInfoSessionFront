@@ -33,6 +33,8 @@ jobs:
         newRisk: 'False Positive'
       - ruleId: 10202
         newRisk: 'False Positive'
+      - ruleId: 10098
+        newRisk: 'False Positive'
   - type: spider
     parameters:
       maxDepth: 3
