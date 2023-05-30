@@ -2,7 +2,8 @@ env:
   contexts:
     - name: default
       urls: [http://localhost:5173/]
-      excludePaths: [http://localhost:5173/node_modules/]
+      excludePaths:
+        - http://localhost:5173/[A-Za-z0-9]+
   parameters:
     progressToStdout: true
 jobs:
