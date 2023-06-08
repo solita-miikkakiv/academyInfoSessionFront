@@ -24,6 +24,6 @@ jobs:
     - name: Install deps
       run: npm ci
       
-    - name: vulnerability-scan
+    - name: NPM Audit with ignore list
       uses: solita-miikkakiv/actions/shell-actions/npm-audit-improved@main
         
