@@ -18,7 +18,7 @@ jobs:
     - name: Setup node
       uses: actions/setup-node@v3
       with:
-        node_version: 18
+        node-version: 18
         cache: 'npm'
         
     - name: Install deps
@@ -35,9 +35,8 @@ jobs:
     - name: vulnerability-scan
       uses: solita-miikkakiv/actions/shell-actions/vulnerability-scan-full@main
       with:
-        azure_user: ${{ secrets.TEST_USER }}
-        azure_password: ${{ secrets.TEST_PASSWORD }}
+        test_user: ${{ secrets.TEST_USER }}
+        test_password: ${{ secrets.TEST_PASSWORD }}
         target: 'http://172.17.0.1:5173/'
-        zap_login: ./.github/workflows/zap/http_sender.py
-        zap_configfile: ./.github/workflows/zap/fail.yaml
+        zap_configfile: ./.zap/config.yml
         
